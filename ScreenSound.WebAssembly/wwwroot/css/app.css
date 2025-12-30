@@ -211,3 +211,111 @@ a.active {
 .card-body {
     margin-top: 1rem;
 }
+
+.playlist-container {
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.playlist-header {
+    background: linear-gradient(to bottom, #7b2cbf, #1a1a1a);
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.playlist-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .playlist-table th, .playlist-table td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .playlist-table th {
+        font-weight: bold;
+    }
+
+tr.playlist-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playing {
+    background-color: rgba(29, 185, 84, 0.3);
+    position: relative;
+}
+
+    .playing td:first-child::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: #1db954;
+        animation: pulse 1.5s infinite;
+    }
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 10px 10px rgba(29, 185, 84, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(29, 185, 84, 0);
+    }
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    height: 4px;
+    margin-top: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #1db954;
+    border-radius: 4px;
+    width: 0%; /* Será atualizado via JS */
+}
+
+.table > :not(caption) > * > * {
+    background-color: transparent;
+}
+
+tr.playlist-item {
+    vertical-align: middle;
+}
+
+tr.playlist-item {
+    cursor: pointer;
+}
+
+.bi-play-fill::before {
+    content: "\f4f4"; /* fa-play */
+    color: transparent;
+}
+
+tr:hover .bi-play-fill::before {
+    content: "\f4f4"; /* fa-play */
+    color: black;
+}
+
+.bi-stop-fill::before {
+    content: "\f4e4"; /* fa-stop */
+    color: red;
+}
+
+/* Esconde SVG interno do Bootstrap Icons se houver */
+.bi-play-fill > svg,
+.bi-stop-fill > svg {
+    display: none;
+}
